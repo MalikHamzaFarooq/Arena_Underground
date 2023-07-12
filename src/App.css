@@ -1,38 +1,99 @@
 .App {
   text-align: center;
+  /* background-color:black; */
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.compete-section{
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  display: flex;
+  position: relative;
+  height: 100vh;
+  padding-left: 4vw;
+  padding-right: 4vw;
 }
 
-.App-link {
-  color: #61dafb;
+.animation-block-01{
+  z-index: -1;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.animation-block-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.compete-section .animation-block-01 .animation-block-inner .leftSide {
+  transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  opacity: 1;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%), url(https://assets-global.website-files.com/6403473…/64034c2…_a1L.svg);
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, auto;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: auto;
+}
+
+.compete-section .animation-block-01 .animation-block-inner .rightSide{
+  opacity: 1;
+  transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  width: 50%;
+  height: 100%;
+  background-image: linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%), url(https://assets-global.website-files.com/6403473…/64034c2…_a1R.svg);
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, auto;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: auto;
+  right: 0%;
+}
+
+.LFG_BG{
+  width: 100%;
+  height: 100%;
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, auto;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+}
+.FeedBG {
+  width: 100%;
+  height: 100%;
+  background-position: 0 0, 50%;
+  background-repeat: repeat, no-repeat;
+  background-size: auto, auto;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
 }
