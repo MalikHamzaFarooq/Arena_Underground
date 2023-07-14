@@ -1,6 +1,30 @@
 import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
 import React from "react";
 import logo from "../Assets/logo.png";
+import { styled } from "styled-components";
+
+const SignUpButton = {
+  backgroundColor: "white",
+  color: "black",
+  borderRadius: "30px",
+  marginRight: "15px",
+  "&:hover": {
+    color: "white",
+    backgroundColor:"rgba(52, 168, 222, 1)"
+  },
+};
+
+const SignInButton = {
+  backgroundColor: "rgba(52, 168, 222, 1)",
+  color: "black",
+  borderRadius: "30px",
+  "&:hover": {
+    color: "white",
+    backgroundColor:"rgba(52, 168, 222, 1)"
+  },
+};
+
+
 export default function Header() {
   return (
     <Container>
@@ -22,13 +46,8 @@ export default function Header() {
 
           <Box component="span" className="navBarcontact">
             <Button
+              sx={SignUpButton}
               variant="contained"
-              sx={{
-                backgroundColor: "white",
-                color: "black",
-                borderRadius: "30px",
-                marginRight: "15px",
-              }}
               size="large"
               rounded={true}
               onClick={() => {}}
@@ -37,11 +56,7 @@ export default function Header() {
             </Button>
             <Button
               variant="contained"
-              sx={{
-                backgroundColor: "rgba(52, 168, 222, 1)",
-                color: "black",
-                borderRadius: "30px",
-              }}
+              sx={SignInButton}
               size="large"
               rounded={true}
               onClick={() => {}}

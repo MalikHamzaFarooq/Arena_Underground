@@ -7,28 +7,29 @@ import logo from "../Assets/logo.png";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { Button } from "@mui/material";
-import styled from "styled-components";
 
 export default function Footer() {
-  const Wrapper = styled.section`
-    Button {
-      color: white;
-    }
-    .myLink{
-      color:white;
-      text-decoration: none;
-      cursor: pointer;
+  const FooterBtn = {
+    color: "white",
+    textDecoration: "none",
+    cursor: "pointer",
+    "&:hover": {
+      color: "rgba(52, 168, 222, 1)",
+    },
+  };
 
-      a{
-        color:black;
-      }
-    }
-   
-  `;
+  const myLink = {
+    color: "white",
+    textDecoration: "none",
+    cursor: "pointer",
+    "&:hover": {
+      color: "rgba(52, 168, 222, 1)",
+    },
+  };
 
   return (
     <Container maxWidth="xl" className="FooterSection">
-    <Wrapper>
+      {/* <Wrapper> */}
       <Grid
         container
         className="FooterLinks"
@@ -49,13 +50,19 @@ export default function Footer() {
           <Box>
             <List>
               <ListItem>
-                <Link className="myLink" href="#">Home</Link>
+                <Link sx={myLink} href="#">
+                  Home
+                </Link>
               </ListItem>
               <ListItem>
-                <Link className="myLink" href="#">Tournaments</Link>
+                <Link sx={myLink} href="#">
+                  Tournaments
+                </Link>
               </ListItem>
               <ListItem>
-                <Link className="myLink" href="#">FAQ</Link>
+                <Link sx={myLink} href="#">
+                  FAQ
+                </Link>
               </ListItem>
             </List>
           </Box>
@@ -64,19 +71,29 @@ export default function Footer() {
           <Box>
             <List>
               <ListItem>
-                <Link className="myLink" href="#">The Portal</Link>
+                <Link sx={myLink} href="#">
+                  The Portal
+                </Link>
               </ListItem>
               <ListItem>
-                <Link className="myLink" href="#">Careers</Link>
+                <Link sx={myLink} href="#">
+                  Careers
+                </Link>
               </ListItem>
               <ListItem>
-                <Link className="myLink" href="#">Contact</Link>
+                <Link sx={myLink} href="#">
+                  Contact
+                </Link>
               </ListItem>
               <ListItem>
-                <Link className="myLink" href="#">Disclaimer</Link>
+                <Link sx={myLink} href="#">
+                  Disclaimer
+                </Link>
               </ListItem>
               <ListItem>
-                <Link className="myLink" href="#">LFG</Link>
+                <Link sx={myLink} href="#">
+                  LFG
+                </Link>
               </ListItem>
             </List>
           </Box>
@@ -100,30 +117,28 @@ export default function Footer() {
             </p>
           </Box>
           <Box>
-            
-              <Button
-                className="blogBtnTxt"
-                size="small"
-                //   endIcon={<MoreVertIcon/>}
-              >
-                Term Of Services
-              </Button>
-              <Button className="blogBtnTxt" size="small">
-                Privacy Policy
-              </Button>
-           
+            <Button
+              sx={FooterBtn}
+              size="small"
+              //   endIcon={<MoreVertIcon/>}
+            >
+              Term Of Services
+            </Button>
+            <Button sx={FooterBtn} size="small">
+              Privacy Policy
+            </Button>
           </Box>
         </Grid>
 
         <Grid item xs={12} md={12} lg={12}>
           <Box sx={{ margin: "5% 0" }}>
-            <Link sx={{ color: "white" }} href="#">
+            <Link sx={myLink} href="#">
               ARENAS UNDERGROUND ©2023. ALL RIGHT RESERVED
             </Link>
           </Box>
         </Grid>
       </Grid>
-      </Wrapper>
+      {/* </Wrapper> */}
     </Container>
   );
 }

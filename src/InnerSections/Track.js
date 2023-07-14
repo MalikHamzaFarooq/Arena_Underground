@@ -1,12 +1,12 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Box, Container, Hidden } from "@mui/material";
+import { Box, Hidden } from "@mui/material";
 import QR from "../Assets/QR.png";
 import Track1 from "../Assets/Track1.png";
 import Track2 from "../Assets/Track2.png";
 import Track3 from "../Assets/Track3.png";
-import TrackBG from "../Assets/TrackBG.svg";
+import LFG_BG from "../Assets/LFG_BG.png";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
@@ -24,14 +24,14 @@ export default function Track() {
         scale: 1,
 
         transition: {
-          duration: 0.8,
+          duration: 2,
           delay: 0.5,
           ease: [0, 0.71, 0.2, 1.01],
         },
       });
     }
     if (!inView) {
-      animation.start({ opacity: 0, scale: 0.5 });
+      animation.start({ opacity: 0, scale: 0 });
     }
   }, [inView]);
   return (
@@ -42,7 +42,7 @@ export default function Track() {
             animate={animation}
             className="LFG_BG"
             style={{
-              backgroundImage: `linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%), url(${TrackBG})`,
+              backgroundImage: `linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%),  url(${LFG_BG})`,
             }}
           ></motion.div>
         </div>
