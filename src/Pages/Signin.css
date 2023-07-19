@@ -1,0 +1,11 @@
+.Sign_main {
+    height: 100vh;
+    /* background-image: url(/img/sign-up-bg.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.head {
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 96.875rem;
+}

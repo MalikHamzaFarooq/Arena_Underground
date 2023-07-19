@@ -3,28 +3,24 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import { Box, Hidden } from "@mui/material";
 import QR from "../Assets/QR.png";
-import compete1 from "../Assets/compete1.png";
-import compete2 from "../Assets/compete2.png";
-import CompeteBG from "../Assets/CompeteBG.png";
-import CompeteBGLeft from "../Assets/CompeteBGLeft.png";
+import Reward3 from "../Assets/Reward3.png";
+import RewardImg from "../Assets/Reward.png";
+import FeedBG from "../Assets/FeedBG.png";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-// import "./Compete.css";
 
-export default function Compete() {
+export default function Reward() {
   const { ref, inView } = useInView({
     threshold: "0.3", //0.3= 30%
   });
   const animation = useAnimation();
-  const animationRight = useAnimation();
 
   useEffect(() => {
     if (inView) {
       animation.start({
-        x: "0",
-        opacity: "1",
-
+        opacity: 1,
+        scale: 1,
         transition: {
           type: "linear",
           duration: 1.5,
@@ -34,66 +30,69 @@ export default function Compete() {
       });
     }
     if (!inView) {
-      animation.start({ opacity: "0", x: "-50vw" });
-    }
-    if (inView) {
-      animationRight.start({
-        x: 0,
-        opacity: "1",
-
-        transition: {
-          type: "linear",
-          duration: 1.5,
-          delay: 0.5,
-          stiffness: 100,
-        },
-      });
-    }
-    if (!inView) {
-      animationRight.start({ opacity: "0", x: "50vw" });
+      animation.start({ opacity: "0", scale: 0 });
     }
   }, [inView]);
+
   return (
     <div className="compete-section" ref={ref}>
       <div className="animation-block-01">
         <div className="animation-block-inner">
           <motion.div
             animate={animation}
-            className="leftSide"
+            className="LFG_BG"
             style={{
-              backgroundImage: `linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%), url(${CompeteBGLeft})`,
-            }}
-          ></motion.div>
-          <motion.div
-            animate={animationRight}
-            className="rightSide"
-            style={{
-              backgroundImage: `linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%), url(${CompeteBG})`,
+              backgroundImage: `linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%), url(${FeedBG})`,
             }}
           ></motion.div>
         </div>
       </div>
       <div className="content" style={{ width: "100%" }}>
-        <Grid container >
-          <Grid item xs={12} sm={6} order={{ xs: 2, sm: 1 }}>
+        <Grid container m={"10% 0"}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            order={{ xs: 2, sm: 1 }}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-start",
+            }}
+          >
             <img
-              src={compete1}
+              src={RewardImg}
               alt="Image 1"
               style={{
                 position: "relative",
                 top: "0%",
-                left: "0%",
-                width: "45%",
+                left: "33%",
+                width: "30%",
+                //   height: "40%",
+                //   transform: Translate("-50%, -50%"),
               }}
             />
+
+            {/* <img
+            src={Reward2}
+            alt="Image 2"
+            style={{
+              position: "relative",
+              top: "10%",
+              left: "-21%",
+              width: "29%",
+              //   height: "40%",
+              //   transform: Translate("-30%, 0%"),
+            }}
+          /> */}
             <img
-              src={compete2}
-              alt="Image 2"
+              src={Reward3}
+              alt="Image 3"
               style={{
                 position: "relative",
-                top: "5%",
+                top: "4%",
                 left: "-25%",
-                width: "45%",
+                width: "36%",
                 //   height: "40%",
                 //   transform: Translate("-30%, 0%"),
               }}
@@ -107,11 +106,11 @@ export default function Compete() {
               spacing={2}
               sx={{ display: "flex", alignItems: "end" }}
             >
-              <Box>
-                <Typography variant="h2">Compete</Typography>
+              <Box sx={{ textAlign: "end", width: "350px" }}>
+                <Typography variant="h2">Reward your game play</Typography>
 
                 <Typography variant="h6" sx={{ marginTop: "8%" }}>
-                  Skilled based Tournaments.
+                  Every match you play counts towards IRL rewards
                 </Typography>
               </Box>
               <Hidden mdDown>

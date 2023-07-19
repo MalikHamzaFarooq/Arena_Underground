@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Box, Container, Hidden } from "@mui/material";
+import { Box, Hidden } from "@mui/material";
 import QR from "../Assets/QR.png";
 import GamingMatters1 from "../Assets/GamingMatters1.png";
 import GamingMatters2 from "../Assets/GamingMatters2.png";

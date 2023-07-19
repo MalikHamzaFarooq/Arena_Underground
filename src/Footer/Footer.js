@@ -9,6 +9,7 @@ import ListItem from "@mui/material/ListItem";
 import { Button } from "@mui/material";
 
 export default function Footer() {
+ 
   const FooterBtn = {
     color: "white",
     textDecoration: "none",
@@ -16,6 +17,7 @@ export default function Footer() {
     "&:hover": {
       color: "rgba(52, 168, 222, 1)",
     },
+    
   };
 
   const myLink = {
