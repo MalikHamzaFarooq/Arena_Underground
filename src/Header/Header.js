@@ -18,6 +18,8 @@ const SignInButton = {
   backgroundColor: "rgba(52, 168, 222, 1)",
   color: "black",
   borderRadius: "30px",
+  marginRight: "15px",
+
   "&:hover": {
     color: "white",
     backgroundColor:"rgba(52, 168, 222, 1)"

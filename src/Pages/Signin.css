@@ -1,11 +1,28 @@
 .Sign_main {
-    height: 100vh;
-    /* background-image: url(/img/sign-up-bg.png); */
-    background-repeat: no-repeat;
-    background-size: cover;
+  height: 100vh;
+  /* background-image: url(/img/sign-up-bg.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .head {
-    padding: 1.5rem;
-    width: 100%;
-    max-width: 96.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* .Inner_content {
+  max-width: ;
+} */
+
+@media (max-width: 425px) {
+  .webLogo {
+    width: 100px !important;
+  }
+}
+@media (max-width: 320px) {
+  .Sign_content {
+    margin: 0 5% !important;
+  }
 }

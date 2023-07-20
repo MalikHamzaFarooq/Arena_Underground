@@ -28,6 +28,11 @@ const AppButton = {
     color: "white",
     backgroundColor: "rgba(52, 168, 222, 1)",
   },
+  "@media (max-width: 425px)": {
+    width: "90%",
+    fontSize: "0.6rem",
+    fontWeight: "500",
+  },
 };
 
 export default function SignUp() {
@@ -39,37 +44,35 @@ export default function SignUp() {
       }}
     >
       <div className="head">
-        <Container>
-          <AppBar
-            position="fixed"
-            className="Header"
-            sx={{ backgroundColor: "rgba(0,0,0, 0)" }}
+        <AppBar
+          position="fixed"
+          className="Header"
+          sx={{ backgroundColor: "rgba(0,0,0, 0)" }}
+        >
+          <Toolbar
+            disableGutters
+            className="mainNavbar"
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              margin: "0 6%",
+            }}
           >
-            <Toolbar
-              disableGutters
-              className="mainNavbar"
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                margin: "0 6%",
-              }}
-            >
-              <img src={logo} alt="Logo" className="webLogo" />
+            <img src={logo} alt="Logo" className="webLogo" />
 
-              <Box component="span" className="navBarcontact">
-                <Button
-                  variant="contained"
-                  sx={AppButton}
-                  size="large"
-                  rounded={true}
-                  onClick={() => {}}
-                >
-                  Download the app
-                </Button>
-              </Box>
-            </Toolbar>
-          </AppBar>
-        </Container>
+            <Box component="span" className="navBarcontact">
+              <Button
+                variant="contained"
+                sx={AppButton}
+                size="large"
+                rounded={true}
+                onClick={() => {}}
+              >
+                Download the app
+              </Button>
+            </Box>
+          </Toolbar>
+        </AppBar>
       </div>
       <div
         className="Sign_content"
@@ -80,7 +83,7 @@ export default function SignUp() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: "15vh 15vw",
+          // margin: "15vh 15vw",
         }}
       >
         <div
@@ -88,21 +91,23 @@ export default function SignUp() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            flexDirection: "column",
           }}
         >
+          <Typography
+            variant="h3"
+            component="h1"
+            gutterBottom
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: "20%",
+            }}
+          >
+            Sign up on the app for 10x more features
+          </Typography>
           <div style={{ maxWidth: "440px" }}>
-            <Typography
-              variant="h2"
-              component="h1"
-              gutterBottom
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              Sign up on the app for 10x more features
-            </Typography>
             <Grid
               item
               xs={12}
@@ -121,7 +126,7 @@ export default function SignUp() {
                   display: "flex",
                   justifyContent: "space-around",
                   alignItems: "center",
-                  marginTop: "15%",
+                  // marginTop: "15%",
                 }}
               >
                 <Typography variant="subtitle1" sx={{ color: "black" }}>

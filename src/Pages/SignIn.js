@@ -29,6 +29,11 @@ const AppButton = {
     color: "white",
     backgroundColor: "rgba(52, 168, 222, 1)",
   },
+  "@media (max-width: 425px)": {
+    width: "90%",
+    fontSize: "0.6rem",
+    fontWeight: "500",
+  },
 };
 
 const useStyles = makeStyles((theme) =>
@@ -65,37 +70,42 @@ export default function SignIn() {
       }}
     >
       <div className="head">
-        <Container>
-          <AppBar
-            position="fixed"
-            className="Header"
-            sx={{ backgroundColor: "rgba(0,0,0, 0)" }}
+        <AppBar
+          position="fixed"
+          className="Header"
+          sx={{ backgroundColor: "rgba(0,0,0, 0)" }}
+        >
+          <Toolbar
+            disableGutters
+            className="mainNavbar"
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              margin: "0 6%",
+            }}
           >
-            <Toolbar
-              disableGutters
-              className="mainNavbar"
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                margin: "0 6%",
-              }}
-            >
-              <img src={logo} alt="Logo" className="webLogo" />
+            {/* <Box> */}
+            <img
+              src={logo}
+              alt="Logo"
+              className="webLogo"
+              // style={{ width: "100px" }}
+            />
+            {/* </Box> */}
 
-              <Box component="span" className="navBarcontact">
-                <Button
-                  variant="contained"
-                  sx={AppButton}
-                  size="large"
-                  rounded={true}
-                  onClick={() => {}}
-                >
-                  Download the app
-                </Button>
-              </Box>
-            </Toolbar>
-          </AppBar>
-        </Container>
+            <Box component="span" className="navBarcontact">
+              <Button
+                variant="contained"
+                sx={AppButton}
+                size="large"
+                rounded={true}
+                onClick={() => {}}
+              >
+                Download the app
+              </Button>
+            </Box>
+          </Toolbar>
+        </AppBar>
       </div>
       <div
         className="Sign_content"
@@ -106,7 +116,7 @@ export default function SignIn() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          margin: "15vh 15vw",
+          // margin: "15vh 15vw",
         }}
       >
         <div
@@ -118,7 +128,7 @@ export default function SignIn() {
         >
           <div style={{ maxWidth: "440px" }}>
             <Typography
-              variant="h2"
+              variant="h3"
               component="h1"
               gutterBottom
               sx={{
@@ -277,8 +287,6 @@ export default function SignIn() {
             </Grid>
           </div>
         </div>
-
-        
       </div>
     </div>
   );
