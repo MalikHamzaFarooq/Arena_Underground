@@ -16,7 +16,7 @@ import google from "../Assets/google-tile.svg";
 import discord from "../Assets/Discord.png";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import signUpBg from "../Assets/signUpBg.png";
+import SignInBG from "../Assets/SignInBG.jpg";
 import "./Signin.css";
 import logo from "../Assets/logo.png";
 
@@ -66,14 +66,14 @@ export default function SignIn() {
     <div
       className="Sign_main"
       style={{
-        backgroundImage: ` url(${signUpBg})`,
+        backgroundImage: ` url(${SignInBG})`,
       }}
     >
       <div className="head">
         <AppBar
           position="fixed"
           className="Header"
-          sx={{ backgroundColor: "rgba(0,0,0, 0)" }}
+          sx={{ backgroundColor: "rgba(0,0,0, 0)", boxShadow: "none" }}
         >
           <Toolbar
             disableGutters
@@ -188,6 +188,9 @@ export default function SignIn() {
                   height: "50px",
                   borderRadius: "32px",
                   backgroundColor: "rgba(52, 168, 222, 1)",
+                  "&:hover": {
+                    backgroundColor: "rgba(52, 168, 222, 1)",
+                  },
                 }}
               >
                 Submit
@@ -222,6 +225,10 @@ export default function SignIn() {
                   marginBottom: "1%",
                   display: "flex",
                   justifyContent: "space-evenly",
+                  "&:hover": {
+                    color: "rgba(52, 168, 222, 1)",
+                    backgroundColor: "white",
+                  },
                 }}
               >
                 Sign In With Google
@@ -248,6 +255,9 @@ export default function SignIn() {
                   color: "white",
                   display: "flex",
                   justifyContent: "space-evenly",
+                  "&:hover": {
+                    border: "2px solid rgba(52, 168, 222, 1)",
+                  },
                 }}
               >
                 SIGN IN WITH DiSCORD
@@ -272,15 +282,18 @@ export default function SignIn() {
                   border: "2px solid white",
                   borderRadius: "32px",
                   color: "white",
+                  "&:hover": {
+                    border: "2px solid rgba(52, 168, 222, 1)",
+                  },
                 }}
               >
                 SIGN IN WITH EMAIL/USERNAME
               </Button>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{mt:"3%"}}>
               <Typography variant="body1">
                 Need an account?
-                <Link href="#" style={{ color: "rgba(52, 168, 222, 1)" }}>
+                <Link href="#" style={{ color: "rgba(52, 168, 222, 1)",textDecoration:"none" }}>
                   Sign up
                 </Link>
               </Typography>

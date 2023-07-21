@@ -15,7 +15,7 @@ import {
 import google from "../Assets/google-tile.svg";
 import discord from "../Assets/Discord.png";
 import QR from "../Assets/QR.png";
-import signUpBg from "../Assets/signUpBg.png";
+import SignInBG from "../Assets/SignInBG.jpg";
 import "./Signin.css";
 import logo from "../Assets/logo.png";
 
@@ -40,14 +40,14 @@ export default function SignUp() {
     <div
       className="Sign_main"
       style={{
-        backgroundImage: ` url(${signUpBg})`,
+        backgroundImage: ` url(${SignInBG})`,
       }}
     >
       <div className="head">
         <AppBar
           position="fixed"
           className="Header"
-          sx={{ backgroundColor: "rgba(0,0,0, 0)" }}
+          sx={{ backgroundColor: "rgba(0,0,0, 0)", boxShadow: "none" }}
         >
           <Toolbar
             disableGutters
@@ -56,6 +56,7 @@ export default function SignUp() {
               display: "flex",
               justifyContent: "space-between",
               margin: "0 6%",
+              boxShadow: "none",
             }}
           >
             <img src={logo} alt="Logo" className="webLogo" />
@@ -175,6 +176,10 @@ export default function SignUp() {
                   marginBottom: "1%",
                   display: "flex",
                   justifyContent: "space-evenly",
+                  "&:hover": {
+                    backgroundColor: "white",
+                    color: "rgba(52, 168, 222, 1)",
+                  },
                 }}
               >
                 Sign In With Google
@@ -201,6 +206,9 @@ export default function SignUp() {
                   color: "white",
                   display: "flex",
                   justifyContent: "space-evenly",
+                  "&:hover": {
+                    border: "2px solid rgba(52, 168, 222, 1)",
+                  },
                 }}
               >
                 SIGN IN WITH DiSCORD
@@ -225,12 +233,15 @@ export default function SignUp() {
                   border: "2px solid white",
                   borderRadius: "32px",
                   color: "white",
+                  "&:hover": {
+                    border: "2px solid rgba(52, 168, 222, 1)",
+                  },
                 }}
               >
                 SIGN IN WITH EMAIL/USERNAME
               </Button>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{mt:"3%"}}>
               <Typography variant="body1">
                 Have an account?
                 <Link
@@ -244,7 +255,7 @@ export default function SignUp() {
                 </Link>
               </Typography>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} sx={{mt:"3%"}}>
               <p>
                 By signing up you agree to our{" "}
                 <Link
