@@ -1,7 +1,7 @@
 import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
 import React from "react";
 import logo from "../Assets/logo.png";
-import { styled } from "styled-components";
+import { Link } from "react-router-dom";
 
 const SignUpButton = {
   backgroundColor: "white",
@@ -10,7 +10,7 @@ const SignUpButton = {
   marginRight: "15px",
   "&:hover": {
     color: "white",
-    backgroundColor:"rgba(52, 168, 222, 1)"
+    backgroundColor: "rgba(52, 168, 222, 1)",
   },
 };
 
@@ -22,10 +22,9 @@ const SignInButton = {
 
   "&:hover": {
     color: "white",
-    backgroundColor:"rgba(52, 168, 222, 1)"
+    backgroundColor: "rgba(52, 168, 222, 1)",
   },
 };
-
 
 export default function Header() {
   return (
@@ -47,24 +46,28 @@ export default function Header() {
           <img src={logo} alt="Logo" className="webLogo" />
 
           <Box component="span" className="navBarcontact">
-            <Button
-              sx={SignUpButton}
-              variant="contained"
-              size="large"
-              rounded={true}
-              onClick={() => {}}
-            >
-              Sign Up
-            </Button>
-            <Button
-              variant="contained"
-              sx={SignInButton}
-              size="large"
-              rounded={true}
-              onClick={() => {}}
-            >
-              Sign IN
-            </Button>
+            <Link to="/signUp" style={{ textDecoration: "none" }}>
+              <Button
+                sx={SignUpButton}
+                variant="contained"
+                size="large"
+                rounded={true}
+                onClick={() => {}}
+              >
+                Sign Up
+              </Button>
+            </Link>
+            <Link to="/signin" style={{ textDecoration: "none" }}>
+              <Button
+                variant="contained"
+                sx={SignInButton}
+                size="large"
+                rounded={true}
+                onClick={() => {}}
+              >
+                Sign IN
+              </Button>
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
