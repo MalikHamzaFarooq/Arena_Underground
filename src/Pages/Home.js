@@ -4,11 +4,10 @@ import Footer from '../Footer/Footer';
 import Slide1 from './Slide1';
 import Compete from './Compete';
 import Feed from './Feed';
-import Profile from './Profile';
 import Track from './Track';
 import GamingMatters from './GamingMatters';
-import Reward from './Reward';
-import LFG from './LFG';
+import SearchComponent from './SearchComponent';
+import Services from "./Services";
 
 
 export default function Home() {
@@ -18,12 +17,12 @@ export default function Home() {
       <Header/>
       <Slide1 />
       <Compete />
-      <LFG />
+      <Services />
       <Feed />
-      <Profile />
+    
       <Track />
-      <GamingMatters />
-      <Reward />
+      {/* <GamingMatters /> */}
+      <SearchComponent />
       <Footer />
     </div>
   );

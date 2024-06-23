@@ -9,7 +9,6 @@ import ListItem from "@mui/material/ListItem";
 import { Button } from "@mui/material";
 
 export default function Footer() {
- 
   const FooterBtn = {
     color: "white",
     textDecoration: "none",
@@ -17,7 +16,6 @@ export default function Footer() {
     "&:hover": {
       color: "rgba(52, 168, 222, 1)",
     },
-    
   };
 
   const myLink = {
@@ -30,16 +28,21 @@ export default function Footer() {
   };
 
   return (
-    <Container maxWidth="xl" className="FooterSection">
-      {/* <Wrapper> */}
+    <Container maxWidth="xl" className="FooterSection" sx={{background: 'linear-gradient(to bottom, rgba(0, 155, 201, 0.9) 0%, #007496 100%)',paddingTop:'2'
+    }} >
+      
       <Grid
         container
         className="FooterLinks"
-        sx={{ justifyContent: "space-around", padding: "0 10%" }}
+        sx={{ justifyContent: "space-around", paddingTop:5  }}
       >
         <Grid item xs={12} md={4} lg={4}>
           <Box>
-            <img src={logo} alt="Algoreublic Logo" />
+            © 2024 Wheatley & Co Accountants Ltd. All rights reserved.
+            <p>
+              We use cookies on this website, you can find more information
+              about cookies here.
+            </p>
             <Box>
               <Link href="#">{/* <FacebookIcon/> */}</Link>
               <Link href="#">{/* <InstagramIcon /> */}</Link>
@@ -47,18 +50,18 @@ export default function Footer() {
             </Box>
           </Box>
         </Grid>
-        <Grid item xs={12} md={2} lg={1}></Grid>
+       
         <Grid item xs={6} md={2} lg={2}>
           <Box>
             <List>
               <ListItem>
                 <Link sx={myLink} href="#">
-                  Home
+                  Please call: 020 8941 2753
                 </Link>
               </ListItem>
               <ListItem>
                 <Link sx={myLink} href="#">
-                  Tournaments
+                  Or email us: mail@wheatleyaccountants.co.uk
                 </Link>
               </ListItem>
               <ListItem>
@@ -74,68 +77,18 @@ export default function Footer() {
             <List>
               <ListItem>
                 <Link sx={myLink} href="#">
-                  The Portal
+                Home | Contact us | Site map | Accessibility | Disclaimer | Help |
                 </Link>
               </ListItem>
-              <ListItem>
-                <Link sx={myLink} href="#">
-                  Careers
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link sx={myLink} href="#">
-                  Contact
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link sx={myLink} href="#">
-                  Disclaimer
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link sx={myLink} href="#">
-                  LFG
-                </Link>
-              </ListItem>
-            </List>
+                         </List>
           </Box>
         </Grid>
-        <Grid item xs={12} md={12} lg={12}>
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              padding: "0 10%",
-            }}
-          >
-            <p>
-              Z League is not endorsed by, directly affiliated with, maintained
-              or sponsored by Apple Inc, Activision Blizzard, Microsoft, Xbox,
-              Sony, Playstation or Epic Games.All content, games titles, trade
-              names and/or trade dress, trademarks, artwork and associated
-              imagery are trademarks and/or copyright material of their
-              respective owners.
-            </p>
-          </Box>
-          <Box>
-            <Button
-              sx={FooterBtn}
-              size="small"
-              //   endIcon={<MoreVertIcon/>}
-            >
-              Term Of Services
-            </Button>
-            <Button sx={FooterBtn} size="small">
-              Privacy Policy
-            </Button>
-          </Box>
-        </Grid>
+   
 
         <Grid item xs={12} md={12} lg={12}>
           <Box sx={{ margin: "5% 0" }}>
             <Link sx={myLink} href="#">
-              ARENAS UNDERGROUND ©2023. ALL RIGHT RESERVED
+            
             </Link>
           </Box>
         </Grid>

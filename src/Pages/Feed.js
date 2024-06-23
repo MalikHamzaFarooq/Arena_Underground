@@ -1,17 +1,13 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
-import { Box, Container, Hidden } from "@mui/material";
-import QR from "../Assets/QR.png";
-import Feed2 from "../Assets/Feed2.png";
-import Feed1 from "../Assets/Feed1.png";
-import Feed3 from "../Assets/Feed3.png";
-import FeedBG from "../Assets/FeedBG.png";
+import { Container } from "@mui/material";
+import calculatorImg from "../Assets/calculatorImg.jpg";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
-export default function Feed() {
+export default function BusinessNews () {
   const { ref, inView } = useInView({
     threshold: "0.3", //0.3= 30%
   });
@@ -37,107 +33,85 @@ export default function Feed() {
   }, [inView]);
 
   return (
-    <div className="compete-section" ref={ref}>
-      <div className="animation-block-01">
-        <div className="animation-block-inner">
-          <motion.div
-            animate={animation}
-            className="LFG_BG"
-            style={{
-              backgroundImage: `linear-gradient(#000 10%, rgba(0, 0, 0, 0) 50%, #000 90%), url(${FeedBG})`,
+    <Container >
+      {/* <div className="compete-section" ref={ref}> */}
+
+      <Grid container sx={{ display: "flex",margin:'4%' }}>
+        <Grid
+          item
+          xs={12}
+          md={7}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            paddingRight:'2%'
+     
+          }}
+        >
+          <Typography
+            variant="h4"
+            sx={{
+              color: "#009bc9",
+              lineHeight: 1.4,
+              fontWeight: 200,
+              fontSize: "24px",
+              marginBottom: 3,
             }}
-          ></motion.div>
-        </div>
-      </div>
-      <div className="content" style={{ width: "100%" }}>
-        <Grid container m={"6% 0"}>
-          <Grid item xs={12} sm={6} order={{ xs: 2, sm: 1 }}>
-            <img
-              src={Feed1}
-              alt="Image 1"
-              style={{
-                position: "relative",
-                top: "-5%",
-                left: "0%",
-                width: "30%",
-                //   height: "40%",
-                //   transform: Translate("-50%, -50%"),
-              }}
-            />
-
-            <img
-              src={Feed3}
-              alt="Image 3"
-              style={{
-                position: "relative",
-                top: "-5%",
-                left: "25%",
-                width: "30%",
-                //   height: "40%",
-                //   transform: Translate("-30%, 0%"),
-              }}
-            />
-            <img
-              src={Feed2}
-              alt="Image 2"
-              style={{
-                position: "relative",
-                top: "0%",
-                left: "-37%",
-                width: "36%",
-                //   height: "40%",
-                //   transform: Translate("-30%, 0%"),
-              }}
-            />
-          </Grid>
-
-          <Grid item xs={12} sm={6} order={{ xs: 1, sm: 2 }}>
-            <Grid
-              container
-              direction="column"
-              spacing={2}
-              sx={{ display: "flex", alignItems: "end" }}
-            >
-              <Box sx={{ textAlign: "end", width: "350px" }}>
-                <Typography variant="h2">Feed</Typography>
-
-                <Typography variant="h6" sx={{ marginTop: "8%" }}>
-                  Check out awesome gaming clips, memes and more
-                </Typography>
-              </Box>
-              <Hidden mdDown>
-                <Box
-                  sx={{
-                    width: "310px",
-                    height: "122px",
-                    borderRadius: "24px",
-                    backgroundColor: "rgba(52, 168, 222, 1)",
-                    display: "flex",
-                    justifyContent: "space-around",
-                    alignItems: "center",
-                    marginTop: "15%",
-                  }}
-                >
-                  <Typography variant="subtitle1" sx={{ color: "black" }}>
-                    Download The App{" "}
-                  </Typography>
-                  <div style={{ width: "30%", height: "70%" }}>
-                    <img
-                      src={QR}
-                      alt="QR Code"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                      }}
-                    />
-                  </div>
-                </Box>
-              </Hidden>
-            </Grid>
-          </Grid>
+          >
+            Here at Wheatley & Co Chartered Accountants, we go above and beyond
+            the services of a standard chartered accountant: we pride ourselves
+            on our innovative, holistic approach to getting to know your
+            business.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#333333",
+              fontSize: "16px",
+              fontWeight: 200,
+              lineHeight: 1.42857143,
+              margin: "0 0 11px",
+            }}
+          >
+            What’s more, Wheatley & Co Chartered Accountants offer clients
+            flexible price structures, reflecting the high quality and
+            individualised services we supply. For more information on our
+            prices, please get in touch.{" "}
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#333333",
+              fontSize: "24px",
+              fontWeight: 200,
+              lineHeight: 1.4,
+              margin: "0 0 11px",
+              fontSize: "16px",
+              fontWeight: 200,
+              lineHeight: 1.42857143,
+            }}
+          >
+            So no matter whether you own a large company or you are an
+            entrepreneur looking to start up in business, we have the
+            accountancy solutions for you. To discover how Wheatley & Co
+            Chartered Accountants can help you to maximise your business
+            profitability and minimise your personal tax liability, please
+            contact us. We would be delighted to work alongside you.{" "}
+          </Typography>
         </Grid>
-      </div>
-    </div>
+
+        <Grid item xs={12} md={5}>
+          <img
+            src={calculatorImg}
+            alt="Image 1"
+            style={{
+              width: "90%",
+        
+            }}
+          />
+        </Grid>
+      </Grid>
+      {/* </div> */}
+    </Container>
   );
 }
