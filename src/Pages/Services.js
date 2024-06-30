@@ -1,30 +1,32 @@
 import React from "react";
 import ServicesCard from "../Common/ServicesCard";
-import { Container, Grid } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 
 export default function Services() {
   return (
-    <Container
-      sx={{ backgroundColor: "#77cfe5",padding:'7% 10%' ,width: "100%", height: "105vh" }}
-      // ref={ref}
+    <Box
+      sx={{
+        backgroundColor: "#77cfe5",
+        padding: '7% 0%', 
+        width: "100%",
+        minHeight: "65vh",
+      }}
     >
-      <Grid container sx={{ display: "flex"}} spacing={3}>
-        <Grid item sm={12} md={4} lg={3}>
-        <ServicesCard />
+      <Grid container justifyContent="center" spacing={3}>
+    
+        <Grid item xs={12} sm={6} md={3} lg={2}>
+          <ServicesCard />
         </Grid>
-        <Grid item sm={12} md={4} lg={3}>
-        <ServicesCard />
+        <Grid item xs={12} sm={6} md={3} lg={2}>
+          <ServicesCard />
         </Grid>
-        <Grid item sm={12} md={4} lg={3}>
-        <ServicesCard />
+        <Grid item xs={12} sm={6} md={3} lg={2}>
+          <ServicesCard />
         </Grid>
-        <Grid item sm={12} md={4} lg={3}>
-        <ServicesCard />
+        <Grid item xs={12} sm={6} md={3} lg={2}>
+          <ServicesCard />
         </Grid>
-        
       </Grid>
-      
-     
-    </Container>
+    </Box>
   );
 }

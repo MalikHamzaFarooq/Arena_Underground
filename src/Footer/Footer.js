@@ -1,48 +1,39 @@
 import * as React from "react";
 import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import { Box, Typography } from "@mui/material";
 import Link from "@mui/material/Link";
-import logo from "../Assets/logo.png";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import { Button } from "@mui/material";
 
 export default function Footer() {
-  const FooterBtn = {
-    color: "white",
-    textDecoration: "none",
-    cursor: "pointer",
-    "&:hover": {
-      color: "rgba(52, 168, 222, 1)",
-    },
-  };
-
   const myLink = {
     color: "white",
     textDecoration: "none",
     cursor: "pointer",
     "&:hover": {
-      color: "rgba(52, 168, 222, 1)",
+      // color: "rgba(52, 168, 222, 1)",
     },
   };
 
   return (
-    <Container maxWidth="xl" className="FooterSection" sx={{background: 'linear-gradient(to bottom, rgba(0, 155, 201, 0.9) 0%, #007496 100%)',paddingTop:'2'
-    }} >
-      
-      <Grid
-        container
-        className="FooterLinks"
-        sx={{ justifyContent: "space-around", paddingTop:5  }}
-      >
-        <Grid item xs={12} md={4} lg={4}>
-          <Box>
-            © 2024 Wheatley & Co Accountants Ltd. All rights reserved.
-            <p>
+    <Box
+      sx={{
+        background:
+          "linear-gradient(to bottom, rgba(0, 155, 201, 0.9) 0%, #007496 100%)",
+        height: "215px",
+      }}
+    >
+      <Grid container justifyContent="center" spacing={3} sx={{marginTop:'4'}}>
+        <Grid item xs={12} sm={6} md={3} sx={{ marginLeft: 1 }}>
+          <Box sx={myLink}>
+            <Typography>
+              © 2024 Wheatley & Co Accountants Ltd. All rights reserved.
+            </Typography>
+            <Typography>
               We use cookies on this website, you can find more information
               about cookies here.
-            </p>
+            </Typography>
+
             <Box>
               <Link href="#">{/* <FacebookIcon/> */}</Link>
               <Link href="#">{/* <InstagramIcon /> */}</Link>
@@ -50,50 +41,33 @@ export default function Footer() {
             </Box>
           </Box>
         </Grid>
-       
-        <Grid item xs={6} md={2} lg={2}>
+        <Grid item xs={12} sm={6} md={3} sx={myLink}>
+          <Typography>Please call: </Typography>
+          <Typography>020 8941 2753 </Typography>
+
+          <Typography sx={{marginTop:'2'}}>Or email us:</Typography>
+            
+          <Typography>
+             mail@wheatleyaccountants.co.uk</Typography>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
           <Box>
             <List>
               <ListItem>
                 <Link sx={myLink} href="#">
-                  Please call: 020 8941 2753
+                  Home | Contact us | Site map | Accessibility | Disclaimer |
+                  Help |
                 </Link>
               </ListItem>
-              <ListItem>
-                <Link sx={myLink} href="#">
-                  Or email us: mail@wheatleyaccountants.co.uk
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link sx={myLink} href="#">
-                  FAQ
-                </Link>
-              </ListItem>
+              <Typography sx={myLink}>
+                Bridge House, 11 Creek Road, Hampton Court, East Molesey, KT8
+                9BE. Registration number 08130849.
+              </Typography>
             </List>
           </Box>
         </Grid>
-        <Grid item xs={6} md={2} lg={2}>
-          <Box>
-            <List>
-              <ListItem>
-                <Link sx={myLink} href="#">
-                Home | Contact us | Site map | Accessibility | Disclaimer | Help |
-                </Link>
-              </ListItem>
-                         </List>
-          </Box>
-        </Grid>
-   
-
-        <Grid item xs={12} md={12} lg={12}>
-          <Box sx={{ margin: "5% 0" }}>
-            <Link sx={myLink} href="#">
-            
-            </Link>
-          </Box>
-        </Grid>
+        <Grid item xs={12} sm={6} md={3}></Grid>
       </Grid>
-      {/* </Wrapper> */}
-    </Container>
+    </Box>
   );
 }

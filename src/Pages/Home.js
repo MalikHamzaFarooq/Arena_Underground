@@ -1,29 +1,18 @@
 import React from "react";
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import Slide1 from './Slide1';
-import Compete from './Compete';
-import Feed from './Feed';
-import Track from './Track';
-import GamingMatters from './GamingMatters';
-import SearchComponent from './SearchComponent';
+import Slide1 from "./Slide1";
+import WelcomeComponent from "./WelcomeComponent";
+import AccountsDetail from "./AccountsDetail";
+import LatestNews from "./LatestNews";
 import Services from "./Services";
-
 
 export default function Home() {
   return (
     <div>
-     
-      <Header/>
       <Slide1 />
-      <Compete />
+      <WelcomeComponent />
       <Services />
-      <Feed />
-    
-      <Track />
-      {/* <GamingMatters /> */}
-      <SearchComponent />
-      <Footer />
+      <AccountsDetail />
+      <LatestNews />
     </div>
   );
 }

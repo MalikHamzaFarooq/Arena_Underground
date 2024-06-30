@@ -4,7 +4,7 @@ import { IoUmbrellaOutline } from "react-icons/io5";
 
 function ServicesCard() {
   return (
-    <Card sx={{  padding: "44px",maxWidth:'50' }}>
+    <Card sx={{  padding: "44px",maxWidth:'50',height:'400px' }}>
       <CardContent sx={{ textAlign: "center" }}>
       <IoUmbrellaOutline  style={{ fontSize: '50px', marginBottom: '10px' }} />
 
