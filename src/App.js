@@ -20,6 +20,7 @@ import NewsPage from "./Pages/News/NewsPage";
 import BusinessNews from "./Pages/News/BusinessNews";
 import HotTopics from "./Pages/News/HotTopics";
 import AccSEND from "./Pages/AccSEND/AccSEND";
+import ContactUS from "./Pages/Contact/ContactUS";
 
 function App() {
   const location = useLocation();
@@ -173,6 +174,15 @@ function App() {
           element={
             <Layout>
               <AccSEND />
+            </Layout>
+          }
+        />
+        <Route
+          path="/contact-us"
+          element={
+            <Layout>
+              <ContactUS />
+
             </Layout>
           }
         />
